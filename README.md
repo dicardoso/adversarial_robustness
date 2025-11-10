@@ -2,7 +2,7 @@
 
 Uma aplicação web (Flask + PyTorch) que demonstra visualmente como modelos de Deep Learning podem ser enganados por "ataques adversariais" e como o "treinamento adversarial" os torna robustos.
 
-![GIF da aplicação em funcionamento](docs\application.gif)
+![GIF da aplicação em funcionamento](docs/application.gif)
 
 ---
 
