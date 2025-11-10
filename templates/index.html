@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo de Robustez Adversarial</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Demo de Robustez de IA</h1>
+        <p>Envie uma imagem (carro, pássaro, avião, etc.) e veja como um ataque adversarial engana um modelo normal, mas não um modelo robusto.</p>
+
+        <div class="uploader">
+            <input type="file" id="file-input" accept="image/*">
+            <button id="upload-button">Analisar Imagem</button>
+        </div>
+
+        <div class="loader-container">
+            <div class="loader hidden" id="loader"></div>
+        </div>
+
+        <div class="results-container hidden" id="results-container">
+            
+            <div class="image-preview-container">
+                <h3>Imagem Original</h3>
+                <img id="image-preview" src="#" alt="Preview da Imagem" />
+            </div>
+
+            <div class="results-grid">
+                <div class="result-card" id="card-orig-vuln">
+                    <h3>Vulnerável (Original)</h3>
+                    <h2 id="label-orig-vuln">--</h2>
+                    <p id="conf-orig-vuln">--</p>
+                    <div class="top-predictions" id="preds-orig-vuln"></div>
+                </div>
+                
+                <div class="result-card" id="card-orig-rob">
+                    <h3>Robusto (Original)</h3>
+                    <h2 id="label-orig-rob">--</h2>
+                    <p id="conf-orig-rob">--</p>
+                    <div class="top-predictions" id="preds-orig-rob"></div>
+                </div>
+
+                <div class="result-card" id="card-atk-vuln">
+                    <h3>Vulnerável (Atacado)</h3>
+                    <h2 id="label-atk-vuln">--</h2>
+                    <p id="conf-atk-vuln">--</p>
+                    <div class="top-predictions" id="preds-atk-vuln"></div>
+                </div>
+
+                <div class="result-card" id="card-atk-rob">
+                    <h3>Robusto (Atacado)</h3>
+                    <h2 id="label-atk-rob">--</h2>
+                    <p id="conf-atk-rob">--</p>
+                    <div class="top-predictions" id="preds-atk-rob"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
